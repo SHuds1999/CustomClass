@@ -21,13 +21,40 @@ namespace CustomList
             _items = new T[capacity];
         }
 
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+
+        }           
+
+        public int Capacity
+        {
+            get
+            {
+                return capacity;
+            }
+            set
+            {
+                capacity = value;
+            }
+        }
+        public T this[ int index]
+        {
+            get => _items[index];
+            set => _items[index] = value;
+        }
+  
+
         public void Add(T itemToAdd)
         {
             if (count == capacity)
             {
                 //create new  array
-                
-                T[] StockAndBonds = new T[capacity * 2];
+                capacity = capacity * 2;
+                T[] StockAndBonds = new T[capacity];
                 Console.WriteLine(capacity);
                 for( int indexItem = 0; indexItem < count; indexItem++)
                 {

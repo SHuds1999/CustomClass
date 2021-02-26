@@ -71,9 +71,30 @@ namespace CustomList
 
         public void Remove(T itemToRemove)
         {
-            
 
+                //How to only remove one thing?  Maybe a bool???
+                //why does count not go down when we remove
+         
+                T[] StockAndBonds = new T[capacity];
+                
+                Console.WriteLine(capacity);
+                for( int i = 0, j = 0; i < count; i++ , j++)
+                {
+                    if ( _items[i].Equals(itemToRemove) )//ifitem equals to remove
+                    {
+                        j--;
+                    count--;
+                    }
+                    
+                    else
+                    {
+                    StockAndBonds[j] = _items[i];
+                    }
+                }
 
+            _items = StockAndBonds;
+
+      
 
 
 
